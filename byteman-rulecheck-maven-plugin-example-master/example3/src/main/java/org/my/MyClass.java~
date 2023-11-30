@@ -1,0 +1,26 @@
+class MyClass
+{
+  boolean doOdd = false;
+  // boolean myMethod(int value)
+  // {
+  //     boolean result;
+  //   if (doOdd) {
+  //     result = myOtherMethod(2 * value + 1);
+  //   } else {
+  //     result = myOtherMethod(2 * value);
+  //   }
+  //   doOdd = !doOdd;
+  //   return result;
+  // }
+  boolean myMethod(int value)
+  {
+    boolean result = myOtherMethod(2 * value + (doOdd ? 1 : 0));
+    doOdd = !doOdd;
+    return result;
+  }
+
+  boolean myOtherMethod(int oddOrEven)
+  {
+      return ((oddOrEven & 1) == 0);
+  }
+}

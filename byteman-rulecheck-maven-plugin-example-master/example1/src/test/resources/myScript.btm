@@ -1,0 +1,7 @@
+RULE check return result is true
+CLASS MyClass
+METHOD myMethod(int)
+AFTER CALL MyClass.myOddMethod 2
+IF ($! != true)
+DO THROW new RuntimeException("expected result true!")
+ENDRULE
